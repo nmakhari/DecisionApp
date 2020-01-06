@@ -29,10 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         Choose_button_mainAcitivity.setOnClickListener{
 
-            /*
-            var intent = Intent(this, ChoiceActivity::class.java)
-            startActivity(intent)
-            choice_textView_choiceActivity.text = choice ?: "Nowhere"*/
+
 
             val number = Quantity_edittext_mainActivity.text.toString()
             val input = Input_edittext_mainActivity.text.toString()
@@ -55,9 +52,16 @@ class MainActivity : AppCompatActivity() {
             val choice:String = options[Random.nextInt(options.size)]
             Log.d("MainActivity", "Choice: $choice")
 
+
+            var intent = Intent(this, ChoiceActivity::class.java)
+            intent.putExtra("Choice", choice)
+            startActivity(intent)
+
+
+            /*
             choiceMessage_textView_mainActivity.text = "You should go to: "
 
-            choice_textView_mainActivity.text = choice
+            choice_textView_mainActivity.text = choice*/
         }
 
 
