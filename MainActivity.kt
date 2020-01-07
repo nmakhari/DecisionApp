@@ -20,19 +20,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
-
 
         Choose_button_mainAcitivity.setOnClickListener{
 
 
-
+            //gets the quantity, and saves it under number
             val number = Quantity_edittext_mainActivity.text.toString()
-            val input = Input_edittext_mainActivity.text.toString()
+
+            Log.d("MainActivity", "Quantity is $number")
+            //passes that number as extra in the intent
+            var intent = Intent(this, InputActivity::class.java)
+            intent.putExtra("Quantity", number)
+            startActivity(intent)
+
+
+
+            /*val input = Input_edittext_mainActivity.text.toString()
 
             fun Separate():List<String> {
 
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
                 val ret = input.split(",")//splits the input at commas
 
-                return ret//returns the List<String> of the seperate inputs
+                return ret//returns the List<String> of the separate inputs
 
             }
 
@@ -51,17 +54,12 @@ class MainActivity : AppCompatActivity() {
 
             val choice:String = options[Random.nextInt(options.size)]
             Log.d("MainActivity", "Choice: $choice")
+            choice.toUpperCase()*/
 
 
-            var intent = Intent(this, ChoiceActivity::class.java)
-            intent.putExtra("Choice", choice)
-            startActivity(intent)
 
 
-            /*
-            choiceMessage_textView_mainActivity.text = "You should go to: "
 
-            choice_textView_mainActivity.text = choice*/
         }
 
 
