@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A">
+    android:background="#FFBADBC9">
 
     <TextView
         android:id="@+id/choice_textView_choiceActivity"
@@ -13,6 +13,7 @@
         android:layout_marginTop="364dp"
         android:background="@drawable/rounded_edittext_mainactivity"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
