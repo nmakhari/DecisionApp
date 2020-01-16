@@ -3,38 +3,44 @@ package com.example.spinner
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+
+import androidx.appcompat.app.AppCompatActivity
+
 import android.widget.Button
-
-
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+
+class QuantityActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        setContentView(R.layout.activity_main)
         //setSupportActionBar(toolbar)
 
+        Log.d("MainActivity", "started main")
 
+        Choose_button_mainAcitivity.setOnClickListener{
 
+            if(Quantity_edittext_mainActivity.text.toString().isEmpty()){
+                Toast.makeText(this,"Please enter a quantity", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
 
-        val button = findViewById<Button>(R.id.proceed_button_welcomeActivity)
+            //gets the quantity, and saves it under number
+            val number = Quantity_edittext_mainActivity.text.toString()
 
-        button.setOnClickListener{
-            val intent = Intent(this, QuantityActivity::class.java)
+            Log.d("MainActivity", "Quantity is $number")
+            //passes that number as extra in the intent
+            var intent = Intent(this, InputActivity::class.java)
+            intent.putExtra("Quantity", number)
             startActivity(intent)
+
+
         }
-
-
-
-
-
 
 
 
@@ -57,4 +63,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-}
+    }
+
+
+
+
+
