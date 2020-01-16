@@ -29,7 +29,7 @@ class QuantityActivity: AppCompatActivity() {
                 Toast.makeText(this,"Please enter a quantity", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
-            else if(Quantity_edittext_mainActivity.text.toString().toInt()<0){
+            else if(Quantity_edittext_mainActivity.text.toString().toInt()<=0){
                 Toast.makeText(this, "Please enter a positive value", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
