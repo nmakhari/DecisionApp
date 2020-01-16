@@ -29,6 +29,10 @@ class QuantityActivity: AppCompatActivity() {
                 Toast.makeText(this,"Please enter a quantity", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+            else if(Quantity_edittext_mainActivity.text.toString().toInt()<0){
+                Toast.makeText(this, "Please enter a positive value", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
 
             //gets the quantity, and saves it under number
             val number = Quantity_edittext_mainActivity.text.toString()

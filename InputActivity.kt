@@ -59,6 +59,11 @@ class InputActivity: AppCompatActivity(){
                     options.add(editModelArrayList[num].getEditTextValues())
                 }
             }
+
+            if(options.size==0){
+                Toast.makeText(this, "Please complete one entry", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
             Log.d("InputActivity", "Options has size: ${options.size}")
 
             if( options.size != quantity ){//if the options list doesn't have as many entries as the quantity variable
