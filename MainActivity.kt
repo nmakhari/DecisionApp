@@ -7,7 +7,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_choice.*
+import android.widget.Button
+
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -17,52 +18,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        setContentView(R.layout.activity_welcome)
+        //setSupportActionBar(toolbar)
 
 
 
-        Choose_button_mainAcitivity.setOnClickListener{
 
+        val button = findViewById<Button>(R.id.proceed_button_welcomeActivity)
 
-
-            val number = Quantity_edittext_mainActivity.text.toString()
-            val input = Input_edittext_mainActivity.text.toString()
-
-            fun Separate():List<String> {
-
-                input.replace('\n', ',')//replaces all new lines with commas
-
-                val ret = input.split(",")//splits the input at commas
-
-                return ret//returns the List<String> of the seperate inputs
-
-            }
-
-            val options = Separate()
-
-            Log.d("MainActivity", "Number: $number")
-            Log.d("MainActivity", "Options: $options")
-
-            val choice:String = options[Random.nextInt(options.size)]
-            Log.d("MainActivity", "Choice: $choice")
-
-
-            var intent = Intent(this, ChoiceActivity::class.java)
-            intent.putExtra("Choice", choice)
+        button.setOnClickListener{
+            val intent = Intent(this, QuantityActivity::class.java)
             startActivity(intent)
-
-
-            /*
-            choiceMessage_textView_mainActivity.text = "You should go to: "
-
-            choice_textView_mainActivity.text = choice*/
         }
+
+
+
+
+
 
 
 
