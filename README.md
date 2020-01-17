@@ -16,5 +16,8 @@ The final render of the app will consist of 3 activities:
 3. Choice Activity => the user is presented with a spinner wheel displaying the options they inputed on the previous screen, the spinner will rotate and land on some randomly selected option, making the decision for them. 
 
  - Idealy this portion of the app will enhance the UI by fetching the logos of the options, storing them preferably as svgs and displaying them on the spinner or as the background once the choice has been made
+ 
+ScreenShots: https://photos.app.goo.gl/i1wuPSN4F5hQQZWR9
 
 Created by Nicholas Makharinets on Jan 5 2020
+
